@@ -17,19 +17,7 @@
             text-align: center;
         }
 
-        h1 {
-            color: #333;
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            color: #666;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .button {
+        .confetti-button {
             display: inline-block;
             background-color: #ff6f61;
             color: #fff;
@@ -38,6 +26,51 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+        }
+
+        .confetti-button:active {
+            background-color: #ff8f00;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff8f00;
+            top: 0;
+            animation: confetti-fall 3s infinite;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+        .container2 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #imagemEscola {
+            display: none;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        .show-image-button {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -45,9 +78,27 @@
     <div class="container">
         <h1>Feliz Aniversário MEU AMOR DYOVANAAAAAAAAAAAAA</h1>
         <p>Hoje é um dia especial. É O SEU DIA ! É SÓ SEU E VOCÊ MERECE CADA SEGUNDINHOOOO</p>
-        <p>você é a luz do meu coração, da minha vida, do meu tudo, e esse site foi feito especialimente para você</p>
+        <p>você é a luz do meu coração, da minha vida, do meu tudo, e esse site foi feito especialmente para você</p>
         
-        <a href="#" class="button">Comemore conosco</a>
+          <a href="#" class="confetti-button">
+            LINDA!
+            <span class="confetti">Feliz Aniversário MEU AMOR DYOVANAAAAAAAAAAAAA</span>
+        </a>
+         <div class="container">
+        <button class="show-image-button" onclick="mostrarImagem()">Mostrar Imagem da Escola</button>
+        <img id="imagemEscola" src="./parabens-felicidades.png">
+    </div>
+
+    <script>
+        function mostrarImagem() {
+            var imagemEscola = document.getElementById("imagemEscola");
+            if (imagemEscola.style.display === "none") {
+                imagemEscola.style.display = "block";
+            } else {
+                imagemEscola.style.display = "none";
+            }
+        }
+    </script>
     </div>
 </body>
 </html>
